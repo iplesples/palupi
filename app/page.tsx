@@ -1,103 +1,108 @@
-import Image from "next/image";
+// app/page.tsx
 
-export default function Home() {
+import Head from 'next/head';
+import Link from 'next/link';
+
+// Asumsi: Heroicons sudah terinstal
+import {
+  ChatBubbleBottomCenterTextIcon,
+  CheckBadgeIcon,
+  MapPinIcon,
+  ChatBubbleOvalLeftEllipsisIcon
+} from '@heroicons/react/24/solid';
+
+const whatsappNumber: string = "6281234567890"; // Ganti dengan nomor WhatsApp Ibu Palupi
+
+const Home: React.FC = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Head>
+        <title>Sewa Innova - Palupi's Rental</title>
+        <meta name="description" content="Sewa mobil Toyota Innova pribadi plus sopir. Khusus untuk perjalanan nyaman dan aman." />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <div className="bg-gray-50 text-gray-800 min-h-screen flex flex-col font-sans">
+
+        {/* Header */}
+        <header className="bg-white border-b border-gray-200">
+          <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+            <Link href="/" className="text-2xl font-bold text-[#003087]">
+              Palupi's Rental
+            </Link>
+            <nav className="hidden md:flex space-x-8">
+              <Link href="#" className="text-gray-600 hover:text-[#0070BA] transition-colors font-medium">Beranda</Link>
+              <Link href="/gallery" className="text-gray-600 hover:text-[#0070BA] transition-colors font-medium">Galeri Kenangan</Link>
+              <Link href="/contact" className="text-gray-600 hover:text-[#0070BA] transition-colors font-medium">Hubungi Kami</Link>
+            </nav>
+            <div className="flex items-center space-x-4">
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="bg-[#0070BA] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#003087] transition-colors">
+                <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5 inline-block mr-2" /> Pesan via WA
+              </a>
+            </div>
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-white text-gray-800 py-24 px-6 md:px-12 flex items-center">
+          <div className="container mx-auto text-center md:text-left md:flex items-center">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                Perjalanan Nyaman dan Aman bersama Toyota Innova
+              </h1>
+              <p className="text-lg md:text-xl font-light mb-8">
+                Layanan sewa mobil Toyota Innova pribadi, lengkap dengan sopir yang ramah dan berpengalaman.
+              </p>
+              <a href={`https://wa.me/${whatsappNumber}?text=Halo%20Ibu%20Palupi,%20saya%20tertarik%20untuk%20menyewa%20mobil%20Innova%20plus%20sopir.`} target="_blank" rel="noopener noreferrer" className="bg-[#0070BA] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#003087] transition-all inline-flex items-center space-x-2">
+                <span>Pesan Sekarang</span>
+                <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5" />
+              </a>
+            </div>
+            <div className="md:w-1/2 flex justify-center">
+              <img src="/images/innova.png" alt="Toyota Innova" className="max-w-full h-auto rounded-lg shadow-lg" />
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 px-6 bg-gray-100">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-12">Kenapa Sewa dengan Palupi?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="flex flex-col items-center">
+                <div className="bg-[#e7f5ff] text-[#0070BA] p-4 rounded-full mb-4">
+                  <CheckBadgeIcon className="h-10 w-10" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Sopir Berpengalaman</h3>
+                <p className="text-gray-600 max-w-sm">Perjalanan Anda lebih aman dan nyaman. Sopir yang tahu jalan dan ramah akan menemani Anda.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="bg-[#e7f5ff] text-[#0070BA] p-4 rounded-full mb-4">
+                  <MapPinIcon className="h-10 w-10" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Tepat Waktu</h3>
+                <p className="text-gray-600 max-w-sm">Kami berkomitmen untuk menjemput dan mengantar Anda sesuai jadwal yang disepakati.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="bg-[#e7f5ff] text-[#0070BA] p-4 rounded-full mb-4">
+                  <ChatBubbleBottomCenterTextIcon className="h-10 w-10" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Komunikasi Personal</h3>
+                <p className="text-gray-600 max-w-sm">Karena kita teman, komunikasi lebih mudah. Pemesanan dan negosiasi harga bisa langsung lewat WA.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-gray-100 text-gray-600 py-8 px-6 mt-auto">
+          <div className="container mx-auto text-center border-t border-gray-200 pt-6">
+            <p>&copy; 2025 Palupi's Rental. All rights reserved.</p>
+          </div>
+        </footer>
+
+      </div>
+    </>
   );
-}
+};
+
+export default Home;
