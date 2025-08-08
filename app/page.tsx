@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Asumsi: Heroicons sudah terinstal
 import {
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Sewa Innova - Palupi's Rental</title>
+        <title>Sewa Innova - Palupi&apos;s Rental</title>
         <meta name="description" content="Sewa mobil Toyota Innova pribadi plus sopir. Khusus untuk perjalanan nyaman dan aman." />
       </Head>
 
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
         <header className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-6 py-4 flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-[#003087]">
-              Palupi's Rental
+              Palupi&apos;s Rental
             </Link>
             <nav className="hidden md:flex space-x-8">
               <Link href="#" className="text-gray-600 hover:text-[#0070BA] transition-colors font-medium">Beranda</Link>
@@ -58,7 +59,13 @@ const Home: React.FC = () => {
               </a>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <img src="/images/innova.png" alt="Toyota Innova" className="max-w-full h-auto rounded-lg shadow-lg" />
+              <Image 
+              src="/images/innova.png"
+              alt="Toyota Innova"
+              width={600} // Sesuaikan dengan lebar gambar
+              height={400} // Sesuaikan dengan tinggi gambar
+              className="max-w-full h-auto rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </section>
@@ -96,7 +103,7 @@ const Home: React.FC = () => {
         {/* Footer */}
         <footer className="bg-gray-100 text-gray-600 py-8 px-6 mt-auto">
           <div className="container mx-auto text-center border-t border-gray-200 pt-6">
-            <p>&copy; 2025 Palupi's Rental. All rights reserved.</p>
+            <p>&copy; 2025 Palupi&apos;s Rental All rights reserved.</p>
           </div>
         </footer>
 

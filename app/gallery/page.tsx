@@ -15,7 +15,7 @@ const Gallery: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Galeri Kenangan - Palupi's Rental</title>
+        <title>Galeri Kenangan - Palupi&apos;s Rental</title>
         <meta name="description" content="Kumpulan foto-foto perjalanan dan kenangan bersama klien kami." />
       </Head>
 
@@ -74,7 +74,7 @@ const Gallery: React.FC = () => {
         {/* Footer (Bisa dibuat komponen terpisah) */}
         <footer className="bg-gray-100 text-gray-600 py-8 px-6 mt-auto">
           <div className="container mx-auto text-center border-t border-gray-200 pt-6">
-            <p>&copy; 2025 Palupi's Rental. All rights reserved.</p>
+            <p>&copy; 2025 Palupi&apos;s Rental. All rights reserved.</p>
           </div>
         </footer>
 
