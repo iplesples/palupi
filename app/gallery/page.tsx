@@ -25,7 +25,7 @@ const Gallery: React.FC = () => {
         <header className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-6 py-4 flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-[#003087]">
-              Palupi's Rental
+              Palupi&apos;s Rental
             </Link>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="text-gray-600 hover:text-[#0070BA] transition-colors font-medium">Beranda</Link>
